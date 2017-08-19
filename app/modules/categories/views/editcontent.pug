@@ -1,0 +1,28 @@
+extends ../../../templates/master.pug
+
+block content
+    h3.title Edit Post
+        form(method = "POST" action=`/posts/edit/${reqParams}`)
+            .field
+                .label Authorname
+                .control
+                    input.input(type ="text" placeholder="Authorname" name ="author")
+            .field
+                .label Subject
+                .control
+                    input.input(type ="text" placeholder="Subject" name ="psubject")
+            .field
+                .label Title
+                .control
+                    input.input(type ="text" placeholder="Title" name ="ptitle")
+            .field  
+                .label Content
+                .control    
+                    input.input(type ="text" placeholder="Content" name ="pcontent")
+            .field
+                .label
+                .control
+                    input.input(type = "hidden" name='id' value=reqParams)
+
+            input(type="submit" value="Submit")
+            p 

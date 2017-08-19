@@ -1,0 +1,26 @@
+extends ../../../templates/base.pug
+
+
+block body
+    h1.title Create new user
+        form(method = "POST" action="/signup")
+            .field
+                .label Username
+                .control
+                    input.input(type ="text" placeholder="Username" name ="username")
+            .field
+                .label Email
+                .control
+                    input.input(type ="text" placeholder="Email" name ="email")
+            .field
+                .label Password 
+                .control
+                    input.input(type ="password" placeholder="Password" name ="password")
+            .field  
+                .label Birthday
+                .control    
+                    input.input(type ="text" name ="birthday")
+
+                    input(type="submit" value="Submit")
+                p
+        

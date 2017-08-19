@@ -1,0 +1,33 @@
+extends ../../../templates/master.pug
+
+block content
+    h1.title Posts
+    if noPosts === 1
+        h4.subtitle No existing posts
+    else
+        ul
+            each posts in postspug  
+                a(href = `/posts/${posts.postid}`)
+                    li= posts.psubject
+            br
+        h3.title Add Post
+        form(method = "POST" action=`/posts/${postspug[0].postcategoryid}`)
+            .field
+                .label Authorname
+                .control
+                    input.input(type ="text" placeholder="Authorname" name ="author")
+            .field
+                .label Subject
+                .control
+                    input.input(type ="text" placeholder="Subject" name ="psubject")
+            .field
+                .label Title
+                .control
+                    input.input(type ="text" placeholder="Title" name ="ptitle")
+            .field  
+                .label Content
+                .control    
+                    input.input(type ="text" placeholder="Content" name ="pcontent")
+
+            input(type="submit" value="Submit")
+            p 

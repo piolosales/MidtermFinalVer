@@ -1,0 +1,25 @@
+extends ../../../../templates/master
+
+block content
+    h1.title
+        span.fa.fa-users
+        | &nbsp; Categories
+    
+    a.button.is-primary.pull-right(href="/admin/categories/new")
+        span.fa.fa-plus
+        | &nbsp; Add Category
+    table.table.is-fullwidth
+        thead
+            tr
+                th ID
+                th Category Name
+        
+        tbody
+            each category in postcategory
+                tr
+                    td= category.id
+                    td: a(href=`/admin/categories/${category.id}`)= category.categoryname
+                    td= category.categoryname
+                    td
+                        a(href=`/admin/categories/${category.id}`): span.fa.fa-edit
+                        | &nbsp;

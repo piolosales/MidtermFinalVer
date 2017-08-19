@@ -1,0 +1,29 @@
+extends ../../../templates/master.pug
+
+block content
+    h1.title Post Content
+    ul 
+        table.table.is-fullwidth
+            thead
+                tr
+                    th ID
+                    th Author
+                    th Subject
+                    th Title
+                    th Content
+                    th Date
+            
+            tbody
+                each posts in postspug
+                    tr
+                        td= posts.postid
+                        td= posts.author
+                        td= posts.psubject
+                        td= posts.ptitle
+                        td= posts.pcontent
+                        td= dates
+                        td
+                        td
+                            a(href= `/posts/edit/${posts.postid}`): span.fa.fa-edit
+                                | &nbsp;
+                            a(href=`/posts/${posts.postid}/remove`): span.fa.fa-remove
